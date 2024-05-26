@@ -1,0 +1,17 @@
+[
+  {"speaker": "customer", "message": "Hi! I'm interested in purchasing the iPhone 14. Can you provide me with some details?"},
+  {"speaker": "agent", "message": "Of course! What specific information would you like to know about the iPhone 14?"},
+  {"speaker": "customer", "message": "I'm particularly interested in the color options. What colors are available for the iPhone 14?"},
+  {"speaker": "agent", "message": "The iPhone 14 is available in Silver, Gold, and Midnight (new dark blue option), but unfortunately, we currently don't have Space Gray."},
+  {"speaker": "customer", "message": "I see. That's a bit disappointing. Do you have any trade-in options available?"},
+  {"speaker": "agent", "message": "Yes, we do offer trade-in options for older devices. May I have the details of your current device?"},
+  {"speaker": "customer", "message": "Sure! I have an iPhone 11 Pro Max in good condition. Can I trade that in for the iPhone 14?"},
+  {"speaker": "agent", "message": "Absolutely! Let me check the trade-in value for your iPhone 11 Pro Max."},
+  {"speaker": "agent", "message": "Based on the condition and model, I can offer you a trade-in value of $400 towards the purchase of the iPhone 14."},
+  {"speaker": "customer", "message": "That sounds fair. I'll take the Gold iPhone 14 and proceed with the trade-in."},
+  {"speaker": "agent", "message": "Great choice! Let's proceed with the checkout and trade-in process."},
+  {"speaker": "customer", "message": "Thank you!"},
+  {"speaker": "agent", "message": "You're welcome! Your order and trade-in have been successfully processed. You'll receive a confirmation email shortly."},
+  {"speaker": "customer", "message": "Excellent! Looking forward to receiving my new phone. Goodbye!"},
+  {"speaker": "agent", "message": "Goodbye! Have a great day!"}
+]

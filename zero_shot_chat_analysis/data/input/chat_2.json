@@ -1,0 +1,18 @@
+[
+  {"speaker": "customer", "message": "Hi there! I'm interested in purchasing the iPhone 14. Can you provide me with some details?"},
+  {"speaker": "agent", "message": "Of course! What specific information would you like to know about the iPhone 14?"},
+  {"speaker": "customer", "message": "Could you please tell me about the camera quality and battery life of the iPhone 14?"},
+  {"speaker": "agent", "message": "The iPhone 14 boasts an advanced camera system and enhanced battery life for prolonged usage."},
+  {"speaker": "customer", "message": "That sounds promising. Can you also inform me about the available storage options and pricing?"},
+  {"speaker": "agent", "message": "Certainly! The iPhone 14 comes in 64GB, 128GB, and 256GB variants, starting at $999."},
+  {"speaker": "customer", "message": "That's fantastic! Can you also suggest some accessories for the iPhone 14?"},
+  {"speaker": "agent", "message": "Sure! We have cases, screen protectors, and wireless chargers that complement the iPhone 14."},
+  {"speaker": "customer", "message": "Thank you. Do you offer any discounts or promotions for the iPhone 14?"},
+  {"speaker": "agent", "message": "Currently, we don't have any active discounts or promotions."},
+  {"speaker": "customer", "message": "Okay, thanks. Can you check the availability of the iPhone 14 in Space Gray?"},
+  {"speaker": "agent", "message": "Let me check that for you. It seems we have limited stock available in Space Gray."},
+  {"speaker": "customer", "message": "I see. I'll need some time to consider. Thank you."},
+  {"speaker": "agent", "message": "You're welcome! If you have any further questions, feel free to ask."},
+  {"speaker": "customer", "message": "Sure, I'll keep that in mind. Goodbye!"},
+  {"speaker": "agent", "message": "Goodbye! Have a great day!"}
+]

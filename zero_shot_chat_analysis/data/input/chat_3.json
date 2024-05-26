@@ -1,0 +1,14 @@
+[
+  {"speaker": "customer", "message": "Hello! I'm interested in purchasing the iPhone 14. Can you provide me with some details?"},
+  {"speaker": "agent", "message": "Of course! What specific information would you like to know about the iPhone 14?"},
+  {"speaker": "customer", "message": "I'm interested in the camera quality and battery life of the iPhone 14."},
+  {"speaker": "agent", "message": "The iPhone 14 features an advanced camera system and improved battery life. It's designed to provide excellent photography and longer usage time."},
+  {"speaker": "customer", "message": "That sounds promising. Can you also provide information about the available storage options and pricing?"},
+  {"speaker": "agent", "message": "Certainly! The iPhone 14 comes in storage options of 64GB, 128GB, and 256GB, with prices starting at $999. Which storage option are you considering?"},
+  {"speaker": "customer", "message": "I'm not sure yet. Do you offer any discounts or promotions for the iPhone 14?"},
+  {"speaker": "agent", "message": "Yes, we currently have a promotion offering a 10% discount on the iPhone 14."},
+  {"speaker": "customer", "message": "Thanks for the information. I'll need some time to decide."},
+  {"speaker": "agent", "message": "Take your time. Let me know if you have any other questions."},
+  {"speaker": "customer", "message": "Sure, I'll keep that in mind. Goodbye!"},
+  {"speaker": "agent", "message": "Goodbye! Have a great day!"}
+]

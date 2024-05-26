@@ -1,0 +1,15 @@
+.idea/
+
+venv/
+env/
+
+# jupyter notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints
+*/**/.ipynb_checkpoints
+**/.ipynb_checkpoints
+
+__pycache__
+*/__pycache__
+*/**/__pycache__
+**/__pycache__

@@ -7,10 +7,6 @@ repos:
     -   id: debug-statements
     -   id: end-of-file-fixer
     -   id: trailing-whitespace
--   repo: https://github.com/asottile/setup-cfg-fmt
-    rev: v2.5.0
-    hooks:
-    -   id: setup-cfg-fmt
 -   repo: https://github.com/asottile/reorder-python-imports
     rev: v3.12.0
     hooks:
@@ -18,7 +14,6 @@ repos:
         args: [
             --application-directories, '.:src',
             --py38-plus,
-            --add-import, 'from __future__ import annotations',
         ]
 -   repo: https://github.com/asottile/pyupgrade
     rev: v3.15.0
@@ -34,3 +29,4 @@ repos:
     rev: 7.0.0
     hooks:
     -   id: flake8
+        args: [--max-line-length=100]

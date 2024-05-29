@@ -1,15 +1,12 @@
-from __future__ import annotations
-
-import argparse
-import configparser
-import os
-
-import datasets
-
 from tqdm import tqdm
 from data import load_dataset
 from utils.model_loading import get_model
 from utils.logger import setup_logger
+from utils.io_utils import write_sentiment_intent_results
+
+import argparse
+import configparser
+import os
 
 
 def main():
@@ -65,17 +62,23 @@ def main():
     # Model Loading
     model = get_model(model_name, logger)
 
-    if args.output_path is not None:
-        os.system(f"mkdir -p {args.output_path}")
+    if args.output_path is not None and not os.path.exists(args.output_path):
+        os.mkdir(args.output_path)
 
     # Sentiment and Intention Analysis
-    logger.info("Sentiment analysis started...")
-    for out in tqdm(model(dataset, candidate_labels=sentiment_labels, batch_size=batch_size), total=len(dataset)):
-        print("Sentiment results:", out)
+    results = []
+    logger.info("Sentiment and intention analysis started...")
+    for sent_out, intent_out in tqdm(zip(
+            model(dataset, candidate_labels=sentiment_labels, batch_size=batch_size),
+            model(dataset, candidate_labels=intent_labels, batch_size=batch_size)),
+            total=len(dataset)):
+        results.append([sent_out, intent_out])
 
-    logger.info("Intention analysis started...")
-    for out in tqdm(model(dataset, candidate_labels=intent_labels, batch_size=batch_size), total=len(dataset)):
-        print("Intention results", out)
+    # Model outputs are saved.
+    save_path = os.path.join(args.output_path, "out_" + data_path.split("/")[-1])
+    write_sentiment_intent_results(results, save_path)
+    logger.info("Output is saved to path: {}".format(save_path))
+    logger.info("DONE!!!!")
 
 
 if __name__ == "__main__":

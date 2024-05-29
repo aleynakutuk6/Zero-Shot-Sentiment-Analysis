@@ -1,7 +1,6 @@
-from torch.utils.data import Dataset
-
 import json
-import os
+
+from torch.utils.data import Dataset
 
 
 class DialogDataset(Dataset):

@@ -2,7 +2,6 @@ import json
 
 
 def write_sentiment_intent_results(results, save_path):
-
     final_dict = []
     for sent_res, intent_res in results:
         assert sent_res["sequence"] == intent_res["sequence"]
@@ -17,9 +16,13 @@ def write_sentiment_intent_results(results, save_path):
         for i in range(len(intent_res["labels"])):
             intent_dict[intent_res["labels"][i]] = intent_res["scores"][i]
 
-        final_dict.append({"sentence": sent_res["sequence"],
-                           "sentiment_results": sent_dict,
-                           "intention_results": intent_dict})
+        final_dict.append(
+            {
+                "sentence": sent_res["sequence"],
+                "sentiment_results": sent_dict,
+                "intention_results": intent_dict,
+            }
+        )
 
     with open(save_path, "w") as f:
         json.dump(final_dict, f)

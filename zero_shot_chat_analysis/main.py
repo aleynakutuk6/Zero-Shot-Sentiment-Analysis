@@ -1,16 +1,18 @@
-from tqdm import tqdm
-from data import load_dataset
-from utils.model_loading import get_model
-from utils.logger import setup_logger
-from utils.io_utils import write_sentiment_intent_results
-
 import argparse
 import configparser
 import os
 
+from data import load_dataset
+from tqdm import tqdm
+from utils.io_utils import write_sentiment_intent_results
+from utils.logger import setup_logger
+from utils.model_loading import get_model
+
+import torch
+
 
 def main():
-    parser = argparse.ArgumentParser(description="Sentiment and Intention Analysis of a customer.")
+    parser = argparse.ArgumentParser(description="Sentiment and Intention Analysis")
     parser.add_argument(
         "-cfg",
         "--config",
@@ -34,7 +36,6 @@ def main():
         help="data path for a dialog between a customer and an agent.",
     )
     args = parser.parse_args()
-
     # reading config file
     assert args.config is not None
     config = configparser.ConfigParser()
@@ -44,10 +45,10 @@ def main():
     sentiment_labels = config.get("labels", "sentiment_labels")
 
     logger = setup_logger("zero-shot-classification")
-    logger.info("Using model name: {}".format(model_name))
-    logger.info("Intent labels: {}".format(intent_labels))
-    logger.info("Sentiment labels: {}".format(sentiment_labels))
-    logger.info("*"*100)
+    logger.info(f"Using model name: {model_name}")
+    logger.info(f"Intent labels: {intent_labels}")
+    logger.info(f"Sentiment labels: {sentiment_labels}")
+    logger.info("*" * 100)
 
     # Preparing Dataset
     # if args.data_path provided, reading json from that path;
@@ -68,16 +69,19 @@ def main():
     # Sentiment and Intention Analysis
     results = []
     logger.info("Sentiment and intention analysis started...")
-    for sent_out, intent_out in tqdm(zip(
+    for sent_out, intent_out in tqdm(
+        zip(
             model(dataset, candidate_labels=sentiment_labels, batch_size=batch_size),
-            model(dataset, candidate_labels=intent_labels, batch_size=batch_size)),
-            total=len(dataset)):
+            model(dataset, candidate_labels=intent_labels, batch_size=batch_size),
+        ),
+        total=len(dataset),
+    ):
         results.append([sent_out, intent_out])
 
     # Model outputs are saved.
     save_path = os.path.join(args.output_path, "out_" + data_path.split("/")[-1])
     write_sentiment_intent_results(results, save_path)
-    logger.info("Output is saved to path: {}".format(save_path))
+    logger.info(f"Output is saved to path: {save_path}")
     logger.info("DONE!!!!")
 
 

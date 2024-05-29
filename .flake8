@@ -1,0 +1,25 @@
+[flake8]
+ignore =
+    # expected 2 blank lines after end of function or class
+    E305,
+    # module level import not at top of file
+    E402,
+    # name may be undefined, or defined from star imports: module
+    F405,
+    # local variable name is assigned to but never used
+    F841,
+    # module imported but unused
+    F401,
+    # line break after binary operator
+    W504,
+    # expected 2 blank lines, found 0
+    E302,
+    # trailing whitespace
+    W291,
+    # too many blank lines (3)
+    E303
+exclude =
+        .git,
+        _pycache_,
+        venv,
+max-line-length = 120

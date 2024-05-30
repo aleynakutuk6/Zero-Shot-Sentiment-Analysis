@@ -1,12 +1,15 @@
 import argparse
 import configparser
 import os
+import sys
 
-from data import load_dataset
+sys.path.append(os.getcwd())
+
 from tqdm import tqdm
-from utils.io_utils import write_sentiment_intent_results
-from utils.logger import setup_logger
-from utils.model_loading import get_model
+from zero_shot_sentiment_analysis.data import load_dataset
+from zero_shot_sentiment_analysis.utils.io_utils import write_sentiment_intent_results
+from zero_shot_sentiment_analysis.utils.logger import setup_logger
+from zero_shot_sentiment_analysis.utils.model_loading import get_model
 
 
 def main():

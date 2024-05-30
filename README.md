@@ -5,10 +5,10 @@ The input data consists of a synthetic textual dialog between a customer and an 
 
 This repository includes a codebase for Sentiment (positive, negative, neutral) and Intention Analysis (e.g., 'change_package,' 'upgrade,' etc.) utilizing [Facebook/BART-Large-MNLI](https://huggingface.co/facebook/bart-large-mnli) from Hugging Face.
 
-###  File Structure
+##  File Structure
 This repository have the following directory structure:
 
-```{.optional-language-as-class .no-copy}
+```
 .
 ├── config
 │   ├── bart_dialog_sentiment_config.ini

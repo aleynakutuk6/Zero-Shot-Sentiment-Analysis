@@ -63,7 +63,7 @@ def main():
         filename = data_path.split("\\")[-1]
     else:
         filename = data_path.split("/")[-1]
-    logger.info("Reading from data file {}...".format(filename))
+    logger.info(f"Reading from data file {filename}...")
     dataset = load_dataset(dataset_name, data_path)
 
     # Model Loading

@@ -79,7 +79,7 @@ The code requires `python>=3.9`, as well as `pytorch>=2.0`. Please follow the in
     python zero_shot_sentiment_analysis/main.py \
         -cfg config/bart_dialog_sentiment_config.ini
     ```
-   
+
    You can either provide data path in the config file, or provide as an argument. To provide manually, run the following:
 
     ```
@@ -87,7 +87,7 @@ The code requires `python>=3.9`, as well as `pytorch>=2.0`. Please follow the in
         -d datasets/dialog_data/dialog_3.json \
         -cfg config/bart_dialog_sentiment_config.ini
     ```
-   
+
 ## Run From TAR.GZ / WHEEL
 
 You can also run the code without any dependency on the repository, by installing it as a pip package. For this purpose, please run the following to install the package:

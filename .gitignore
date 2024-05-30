@@ -5,6 +5,8 @@ env/
 
 resources/facebook-bart-large-mnli/
 
+git-filter-repo
+
 # jupyter notebook
 .ipynb_checkpoints
 */.ipynb_checkpoints

@@ -8,7 +8,7 @@ This repository includes a codebase for Sentiment (positive, negative, neutral) 
 ###  File Structure
 This repository have the following directory structure:
 
-```
+```{.optional-language-as-class .no-copy}
 .
 ├── config
 │   ├── bart_dialog_sentiment_config.ini
@@ -56,6 +56,7 @@ The code requires `python>=3.9`, as well as `pytorch>=2.0`. Please follow the in
 2. To create and activate an environment, either:
 
    - install anaconda and run:
+
 
     ```
     conda create -n my_env python=3.9

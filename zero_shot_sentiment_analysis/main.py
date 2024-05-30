@@ -59,6 +59,11 @@ def main():
     batch_size = int(config.get("dataset", "batch_size"))
     if args.data_path is not None:
         data_path = args.data_path
+    if "\\" in data_path:
+        filename = data_path.split("\\")[-1]
+    else:
+        filename = data_path.split("/")[-1]
+    logger.info("Reading from data file {}...".format(filename))
     dataset = load_dataset(dataset_name, data_path)
 
     # Model Loading
@@ -80,7 +85,7 @@ def main():
         results.append([sent_out, intent_out])
 
     # Model outputs are saved.
-    save_path = os.path.join(args.output_path, "out_" + data_path.split("/")[-1])
+    save_path = os.path.join(args.output_path, "out_" + filename)
     write_sentiment_intent_results(results, save_path)
     logger.info(f"Output is saved to path: {save_path}")
     logger.info("DONE!!!!")

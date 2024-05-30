@@ -3,6 +3,8 @@
 venv/
 env/
 
+resources/facebook-bart-large-mnli/
+
 # jupyter notebook
 .ipynb_checkpoints
 */.ipynb_checkpoints

@@ -8,8 +8,6 @@ from utils.io_utils import write_sentiment_intent_results
 from utils.logger import setup_logger
 from utils.model_loading import get_model
 
-import torch
-
 
 def main():
     parser = argparse.ArgumentParser(description="Sentiment and Intention Analysis")
@@ -44,7 +42,7 @@ def main():
     intent_labels = config.get("labels", "intent_labels")
     sentiment_labels = config.get("labels", "sentiment_labels")
 
-    logger = setup_logger("zero-shot-classification")
+    logger = setup_logger("zero-shot-sentiment-analysis")
     logger.info(f"Using model name: {model_name}")
     logger.info(f"Intent labels: {intent_labels}")
     logger.info(f"Sentiment labels: {sentiment_labels}")
